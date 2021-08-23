@@ -3,6 +3,7 @@ import shortid from 'shortid';
 import InputForm from './component/InputForm/InputForm';
 import Phonebook from './component/PhoneBook/PhoneBook';
 import Filter from './component/Filter/Filter';
+import './App.css';
 
 class App extends Component {
   state = {
@@ -70,7 +71,7 @@ class App extends Component {
 
     return (
       <>
-        <section>
+        <section className="container">
           <InputForm onSubmit={this.formSabmitHangler} />
 
           <Filter value={filter} onChange={this.changeFilter} />
