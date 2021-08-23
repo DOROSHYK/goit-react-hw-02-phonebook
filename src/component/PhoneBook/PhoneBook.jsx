@@ -1,8 +1,9 @@
 import React from 'react';
-// import PropTypes from "prop-types";
 import shortid from 'shortid';
 
 const Phonebook = ({ date, onDelete }) => {
+  // const keyId = shortid.generate();
+
   return (
     <ul>
       {date.map(({ name, number }) => (
