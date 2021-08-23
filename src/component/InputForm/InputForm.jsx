@@ -10,11 +10,12 @@ class InputForm extends Component {
   handelChange = event => {
     const { name, value } = event.currentTarget;
     this.setState({ [name]: value });
-    console.log(event.currentTarget);
+    // console.log(event.currentTarget);
   };
 
   handleSubmit = event => {
     event.preventDefault();
+    // console.log(this.state)
     this.props.onSubmit(this.state);
     this.reset();
   };
