@@ -16,6 +16,22 @@ class App extends Component {
     filter: '',
   };
 
+  componentDidMount() {
+    const contacts = localStorage.getItem('contacts');
+    const parsContacts = JSON.parse(contacts);
+
+    if (parsContacts) {
+      this.setState({ contacts: parsContacts });
+    }
+  }
+
+  componentDidUpdate(prevPr, { contacts }) {
+    const newContact = this.state.contacts;
+    if (newContact !== contacts) {
+      localStorage.setItem('contacts', JSON.stringify(newContact));
+    }
+  }
+
   addContacts = ({ name, number }) => {
     const { contacts } = this.state;
     const contact = {
@@ -71,13 +87,14 @@ class App extends Component {
 
     return (
       <>
-        <section className="container">
+        <div className="container">
+          <h1 className="title"> PhoneBook </h1>
           <InputForm onSubmit={this.formSabmitHangler} />
 
           <Filter value={filter} onChange={this.changeFilter} />
 
           <Phonebook date={visibleContact} onDelete={this.deleteContact} />
-        </section>
+        </div>
       </>
     );
   }

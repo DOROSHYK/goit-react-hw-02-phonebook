@@ -29,39 +29,37 @@ class InputForm extends Component {
     return (
       <form className={style.Form} onSubmit={this.handleSubmit}>
         <div className={style.InputForm}>
-          <label>
-            Имя
-            <input
-              className={style.FormInput}
-              id="name"
-              value={name}
-              onChange={this.handelChange}
-              type="tex"
-              name="name"
-              // pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-              // title="Номер телефона должен состоять цифр и может содержать пробелы, тире, круглые скобки и может начинаться с +"
-              // required
-            />
-          </label>
+          <label>Имя</label>
+          <input
+            className={style.FormInput}
+            id="name"
+            value={name}
+            onChange={this.handelChange}
+            type="tex"
+            name="name"
+            // pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+            // title="Номер телефона должен состоять цифр и может содержать пробелы, тире, круглые скобки и может начинаться с +"
+            // required
+          />
         </div>
 
         <div className={style.InputForm}>
-          <label>
-            Телефон
-            <input
-              className={style.FormInput}
-              id="number"
-              value={number}
-              onChange={this.handelChange}
-              type="tex"
-              name="number"
-              // pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-              // title="Номер телефона должен состоять цифр и может содержать пробелы, тире, круглые скобки и может начинаться с +"
-              // required
-            />
-          </label>
+          <label>Телефон</label>
+          <input
+            className={style.FormInput}
+            id="number"
+            value={number}
+            onChange={this.handelChange}
+            type="tex"
+            name="number"
+            // pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+            // title="Номер телефона должен состоять цифр и может содержать пробелы, тире, круглые скобки и может начинаться с +"
+            // required
+          />
         </div>
-        <button type="submit">Add contact</button>
+        <button className={style.button} type="submit">
+          Add contact
+        </button>
       </form>
     );
   }
